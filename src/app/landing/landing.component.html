@@ -1,0 +1,25 @@
+<div class="main ui-g">
+  <div class="header ui-g-12 ui-g-nopad">
+    <div class="logo-title"
+         routerLink="/dashboard"
+         [ngStyle]="{'cursor': user ? 'pointer': 'default'}">
+      <svg width=60
+           height=45>
+        <image xlink:href="assets/images/header_icon.svg"
+               width="60"
+               height="45">
+        </image>
+      </svg>
+      <h1>Library</h1>
+    </div>
+    <p-splitButton *ngIf="user"
+                   label="{{user?.username}}"
+                   icon="pi pi-user"
+                   (onClick)="null"
+                   [model]="items">
+    </p-splitButton>
+  </div>
+  <div class="content ui-g-12">
+    <router-outlet></router-outlet>
+  </div>
+</div>

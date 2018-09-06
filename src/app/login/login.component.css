@@ -1,0 +1,23 @@
+.library-card > * {
+  margin: 20px 15%;
+}
+
+.library-card h1 {
+  color: #1f9bde;
+}
+
+.library-card span {
+  width: 70%;
+}
+
+.library-card span input {
+  width: 100%;
+}
+
+.library-card p.error-message {
+  color: red;
+}
+
+.library-card p-button {
+  margin-top: 0;
+}

@@ -1,0 +1,24 @@
+<div class="library-card ui-lg-4 ui-lg-offset-4 ui-md-6 ui-md-offset-3 ui-sm-10 ui-sm-offset-1">
+  <h1>Login:</h1>
+  <span class="ui-float-label">
+    <input type="text"
+           pInputText
+           [(ngModel)]="user.username"
+           id="username" />
+    <label for="username">Username</label>
+  </span>
+  <span class="ui-float-label">
+    <input type="password"
+           pInputText
+           [(ngModel)]="user.password"
+           id="password" />
+    <label for="password">Password</label>
+  </span>
+  <p *ngIf="errorMessage"
+     class="error-message">
+    {{errorMessage}}
+  </p>
+  <p-button label="Submit"
+            (onClick)="login($event)">
+  </p-button>
+</div>

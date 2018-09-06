@@ -1,0 +1,17 @@
+.table-caption > * {
+  display: flex;
+  align-items: center;
+}
+
+.table-caption .book-search {
+  justify-content: flex-start;
+}
+
+.table-caption .available {
+  justify-content: flex-end;
+}
+
+.table-caption .book-search input {
+  margin-left: 5px;
+  padding: 3px;
+}

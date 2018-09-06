@@ -1,0 +1,17 @@
+.dashboard-content p-card {
+  cursor: pointer;
+}
+
+.dashboard-content p-card:focus {
+  outline: none;
+}
+
+.dashboard-content h1 {
+  margin: 0;
+  text-align: center;
+}
+
+.dashboard-content img {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}

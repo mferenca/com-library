@@ -1,0 +1,99 @@
+<ng-container *ngIf="book">
+  <div class="library-card ui-lg-6 ui-lg-offset-3 ui-md-10 ui-md-offset-1 ui-sm-12">
+    <div class="image-container ui-g-4 ui-sm-6 ui-sm-offset-3 ui-g-nopad">
+      <img *ngIf="book.cover"
+           src="{{book.cover}}">
+    </div>
+    <div class="ui-g-8 ui-sm-12">
+      <div class="book-info-row ui-g-12">
+        <div class="ui-g-4 ui-g-nopad">
+          <p>Author:</p>
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+          <p>{{book.author}}</p>
+        </div>
+      </div>
+      <div class="book-info-row ui-g-12">
+        <div class="ui-g-4 ui-g-nopad">
+          <p>Title:</p>
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+          <p>{{book.title}}</p>
+        </div>
+      </div>
+      <div class="book-info-row ui-g-12">
+        <div class="ui-g-4 ui-g-nopad">
+          <p>Country:</p>
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+          <p>{{book.country}}</p>
+        </div>
+      </div>
+      <div class="book-info-row ui-g-12">
+        <div class="ui-g-4 ui-g-nopad">
+          <p>Original title:</p>
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+          <p>{{book.originalTitle}}</p>
+        </div>
+      </div>
+      <div class="book-info-row ui-g-12">
+        <div class="ui-g-4 ui-g-nopad">
+          <p>Published:</p>
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+          <p>{{book.year}}</p>
+        </div>
+      </div>
+      <div class="book-info-row ui-g-12">
+        <div class="ui-g-4 ui-g-nopad">
+          <p>Genre:</p>
+        </div>
+        <div class="ui-g-8 ui-g-nopad">
+          <p>{{book.genre}}</p>
+        </div>
+      </div>
+      <div class="ui-g-12">
+        <button pButton
+                type="button"
+                label="Reserve"
+                [disabled]="!book.quantity"
+                (click)="display=true">
+        </button>
+      </div>
+    </div>
+  </div>
+  <p-dialog header="Book reservation"
+            [(visible)]="display"
+            [modal]="true"
+            [minHeight]="100">
+    Are you sure you want to reserve <b>{{book.author}}: {{book.title}}</b>?
+    <p-footer>
+      <button pButton
+              type="button"
+              class="ui-button-secondary"
+              label="No"
+              (click)="display=false">
+      </button>
+      <button pButton
+              type="button"
+              label="Yes"
+              (click)="reserveBook()">
+      </button>
+    </p-footer>
+  </p-dialog>
+  <p-dialog header="Book reservation"
+            [(visible)]="displayWarningModal"
+            [modal]="true"
+            [minHeight]="100">
+    You have already reserved this book!
+    <p-footer>
+      <button pButton
+              type="button"
+              class="ui-button-secondary"
+              label="OK"
+              (click)="displayWarningModal=false">
+      </button>
+    </p-footer>
+  </p-dialog>
+</ng-container>

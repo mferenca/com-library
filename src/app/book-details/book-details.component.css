@@ -1,0 +1,18 @@
+.library-card {
+  display: flex;
+}
+
+.library-card .book-info-row:not(:first-of-type) {
+  border-top: 1px solid #1f9bde;
+}
+
+.library-card .book-info-row p {
+  margin: 0;
+  color: #1f9bde;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.library-card button {
+  min-width: 150px;
+}

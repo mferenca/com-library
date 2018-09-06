@@ -1,0 +1,50 @@
+<div *ngIf="books"
+     class="ui-lg-4 ui-lg-offset-4 ui-md-8 ui-md-offset-2 ui-sm-12">
+  <div *ngFor="let book of books"
+       class="library-card ui-g-12">
+    <div class="ui-g-2 ui-g-nopad image-container">
+      <img src="{{book.cover}}">
+    </div>
+    <div class="book-info ui-g-10">
+      <div class="ui-g-12 ui-g-nopad">
+        <h2>{{book.author}}</h2>
+      </div>
+      <div class="ui-g-12 ui-g-nopad">
+        <h2 class="title">{{book.title}}</h2>
+      </div>
+      <div class="ui-g-12 ui-g-nopad btn-container">
+        <button pButton
+                type="button"
+                label="Cancel reservation"
+                (click)="openModal(book)">
+        </button>
+      </div>
+    </div>
+  </div>
+  <p-dialog *ngIf="book"
+            header="Cancel reservation"
+            [(visible)]="display"
+            [modal]="true"
+            [minHeight]="100">
+    Are you sure you want to cancel reservation for the book <b>{{book.title}}</b>?
+    <p-footer>
+      <button pButton
+              type="button"
+              class="ui-button-secondary"
+              label="No"
+              (click)="display=false">
+      </button>
+      <button pButton
+              type="button"
+              label="Yes"
+              (click)="cancelReservation()">
+      </button>
+    </p-footer>
+  </p-dialog>
+</div>
+<div *ngIf="!books.length"
+     class="ui-lg-4 ui-lg-offset-4 ui-md-8 ui-md-offset-2 ui-sm-12">
+  <div class="library-card center-text ui-g-12">
+    <h1>You do not have any books reserved.</h1>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+.library-card {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.library-card.center-text {
+  display: block;
+  text-align: center;
+}
+
+.library-card.center-text h1 {
+  color: #1f9bde;
+}
+
+.library-card .book-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.library-card .book-info h2 {
+  margin: 0 10px;
+  color: #1f9bde;
+}
+
+.library-card .book-info h2.title {
+  margin-top: 5px;
+  border-top: 1px solid #1f9bde;
+  padding-top: 5px;
+}
+
+.library-card .book-info .btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-grow: 1;
+}
